@@ -11,18 +11,11 @@ export default function Home() {
   if (isLoading) return <>Loading...</>;
   if (error) return <>{error.message}</>;
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-slate-700">
+    <main className="flex min-h-screen flex-col items-center justify-between bg-slate-700">
       <NavBar />
-      {user ? (
-        <>
-          <PrivateHome />
-        </>
-      ) : (
-        <>
-          <PublicHome />
-        </>
-      )}
-      <a>{user?.nickname}</a>
+      <div className="mt-[100px] p-24">
+        {user ? <PrivateHome /> : <PublicHome />}
+      </div>
     </main>
   );
 }
