@@ -5,6 +5,11 @@ import PrivateHome from "./components/PrivateHome";
 import PublicHome from "./components/PublicHome";
 import NavBar from "./components/NavBar";
 
+//@ts-ignore
+global.performance = global.performance || {
+  now: () => new Date().getTime(),
+};
+
 export default function Home() {
   const { user, error, isLoading } = useUser();
 
