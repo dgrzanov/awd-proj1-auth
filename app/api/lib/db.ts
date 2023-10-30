@@ -1,4 +1,4 @@
-import { Pool } from "pg";
+import { Pool, PoolConfig } from "pg";
 
 let conn;
 
@@ -9,6 +9,7 @@ if (!conn) {
     host: process.env.PGSQL_HOST,
     port: (process.env.PGSQL_PORT || 5432) as number,
     database: process.env.PGSQL_DATABASE,
+    ssl: true,
   });
 }
 
