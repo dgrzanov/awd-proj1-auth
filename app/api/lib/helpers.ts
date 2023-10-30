@@ -1,3 +1,4 @@
+//@ts-ignore
 import conn from "./db";
 import roundRobin from "./roundRobin";
 

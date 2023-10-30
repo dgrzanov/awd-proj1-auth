@@ -1,4 +1,4 @@
-import { unmountComponentAtNode } from "react-dom";
+//@ts-ignore
 import conn from "../../lib/db";
 import { generateCompetition } from "../../lib/helpers";
 
@@ -15,6 +15,7 @@ export async function POST(request: Request) {
     defeat: scoringSystem[2],
   };
 
+  //@ts-ignore
   const result = await conn.query(
     `INSERT INTO competition (name, win, draw, defeat) VALUES ($1, $2, $3, $4) RETURNING id`,
     [compData.name, compData.win, compData.draw, compData.defeat]
