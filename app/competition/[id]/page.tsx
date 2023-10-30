@@ -33,6 +33,7 @@ const CompetitionPage = ({ params }: { params: { id: number } }) => {
       <div className="mt-[100px] p-24">
         {user ? (
           <>
+            {/* @ts-ignore */}
             <a>{competition?.name}</a>
           </>
         ) : null}
