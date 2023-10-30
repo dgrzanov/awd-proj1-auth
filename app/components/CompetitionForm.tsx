@@ -1,4 +1,5 @@
 // "use client";
+import axios from "axios";
 import React, { useState } from "react";
 
 interface CompetitionFormData {
@@ -31,12 +32,18 @@ const CompetitionForm: React.FC = () => {
     console.log("Competition Name:", formData.competitionName);
     console.log("Competitor List:", formData.competitorList);
     console.log("Scoring System:", formData.scoringSystem);
+    axios.post("api/competition/generate", formData);
   };
 
   return (
     <div>
       <h1 className="font-bold my-10">Enter competition information:</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+      <form
+        onSubmit={handleSubmit}
+        method="POST"
+        action={"api/competition/generate"}
+        className="flex flex-col gap-5"
+      >
         <div className="flex justify-between gap-3">
           <label>Competition Name:</label>
           <input
